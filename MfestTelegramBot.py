@@ -4,8 +4,9 @@ import ast
 import openpyxl
 import os.path
 from datetime import datetime
+from Config import TELEGRAM_BOT_API
 
-MfestBot = telebot.TeleBot('7159155292:AAFyddqG5pt6snYiAuH3zU-swq3B8algBoE')
+MfestBot = telebot.TeleBot(TELEGRAM_BOT_API)
 GloveQuestions = [
     ('Glove1.jpeg', 'Напишіть приблизну кількість продажу заливних рукавиць'),
     ('Glove2.jpeg', 'Напишіть приблизну кількість продажу латексних рукавиць (як у прибиральниць)'),
