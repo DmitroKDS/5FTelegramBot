@@ -9,7 +9,7 @@ This is a Telegram bot designed for MFest to collect data on glove sales from va
 - **User Interaction**: The bot starts a conversation with users, asking them a series of predefined questions related to glove sales.
 - **Data Collection**: Users provide information about the sales of different types of gloves, which the bot records.
 - **Data Storage**: The collected data is stored in a dictionary and eventually saved to an Excel file (`FFResult.xlsx`) for further analysis.
-- **Admin Functions**: Admin users (`dmitrokds`, `ksb2006`) can access additional features like starting the test or retrieving statistics.
+- **Admin Functions**: Admin users can access additional features like starting the test or retrieving statistics.
 
 ## How It Works
 
