@@ -6,7 +6,7 @@ import os.path
 from datetime import datetime
 from Config import TELEGRAM_BOT_API
 
-MfestBot = telebot.TeleBot(TELEGRAM_BOT_API)
+5FBot = telebot.TeleBot(TELEGRAM_BOT_API)
 GloveQuestions = [
     ('Glove1.jpeg', 'Напишіть приблизну кількість продажу заливних рукавиць'),
     ('Glove2.jpeg', 'Напишіть приблизну кількість продажу латексних рукавиць (як у прибиральниць)'),
@@ -22,7 +22,7 @@ if len(FFResult)==0 or FFResult[0]!='{':
 else:
     FiveFingersInfo = ast.literal_eval(FFResult)
 
-@MfestBot.message_handler(commands=['start'])
+@5FBot.message_handler(commands=['start'])
 def StartChat(Message):
     if Message.chat.username not in ['dmitrokds', 'ksb2006']:
         if Message.chat.username not in FiveFingersInfo:
@@ -161,7 +161,7 @@ def SetQuestion(Message):
     FiveFingersInfoFile.save('FFResult.xlsx')
 
 
-@MfestBot.callback_query_handler(func=lambda callback: True)
+@5FBot.callback_query_handler(func=lambda callback: True)
 def SetAnswerCallback(Callback):
     if 'SetAnswer' in Callback.data:
         MfestBot.send_message(Callback.message.chat.id, f"Ви вибрали {Callback.data.replace('SetAnswer', '')}. Дякую за вашу відповідь.")
@@ -211,4 +211,4 @@ def RestartChat(Message):
         MfestBot.send_message(Message.chat.id, f'Привіт {Message.chat.username}', reply_markup=ButtonsMarkup)
 
 
-MfestBot.infinity_polling()
+5FBot.infinity_polling()
